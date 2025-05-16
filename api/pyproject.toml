@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "http-apis"
+version = "0.1.0"
+description = ""
+authors = ["Nathan Segers <nathan@nathansegers.be>"]
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.86.0"
+strawberry-graphql = {extras = ["debug-server", "fastapi"], version = "^0.139.0"}
+requests = "^2.28.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

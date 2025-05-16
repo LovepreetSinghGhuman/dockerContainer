@@ -1,0 +1,19 @@
+# You can try to update these package versions and see if your code still works, sometimes, this is needed..
+# Making packages too strict, is not good for their dependencies
+# But it's sometimes best to just stick with a fixed version so you now in the future that you are always using a working-version.
+# If you give too much flexibility (using >= instead of == or <=), you can break your app with breaking changes of these packages
+
+itsdangerous==2.1.2
+markupsafe==2.1.3
+Flask==2.2.2 # Don't use the latest version (>3.0.0) yet
+uWSGI==2.0.23
+requests==2.31.0
+flask-login==0.6.3
+Flask-WTF==1.2.1
+email-validator==1.1.2
+# If a package is trying to create a conflict, then make it less strict.
+# In this way, we allow the flask-jwt-extended package to determine which version it can use.
+Flask-JWT-Extended
+jinja2<3.1.0
+werkzeug==2.2.2
+

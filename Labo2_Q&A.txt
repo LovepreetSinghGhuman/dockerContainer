@@ -1,0 +1,26 @@
+Q1 : Add your own comments to explain in your own words what this Dockerfile does.
+A1 : It installs Flask, uWSGI and sets everything up.
+
+Q2 : To obtain an image, we have to create a so-called build. The basis for this is a Dockerfile. With which command can you do this execute this as well.
+A2 : docker build -t my-flask-app web
+
+Q3 : Can you figure out a way to replace the previous commands (docker build and docker history) with an image name instead of a container_id ?
+A3 : docker history my-flask-app
+
+Q4 : What does the -p and -it flags do? ( docker run -p 5000:5000 -it my-flask-app )
+A4 : -p maps port 5000 on your computer to port 5000 in the container, so you can access the app from your browser.  
+     -it allows you to interact with the container’s terminal (it combines --interactive and --tty).
+
+Q5 : What did you change to the Dockerfile to make it build faster?
+A5 : Uses --no-cache-dir with pip to reduce image size. Keeps the order of instructions optimal for layer caching.
+
+Q6 : What is the advantage of an official image?
+A6 : The advantage of using an official image is that it is maintained, tested, and regularly updated by Docker or the upstream project’s maintainers.
+
+Q7 : Explain what each line of the Docker Compose file does!
+A7 : Look in the docker-compose file
+
+Q8 : The frontend service uses expose instead of ports, why is that needed in here? What's the difference?
+A8 : The `expose` keyword makes port 5000 available to other services in the same Docker network, but does not publish it to the host machine.  
+This is needed here because only the nginx service needs to access the frontend directly; users do not access the frontend from their browser.  
+In contrast, `ports` publishes the port to the host, making it accessible from outside Docker.

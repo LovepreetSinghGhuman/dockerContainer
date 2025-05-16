@@ -2,7 +2,7 @@
 name = "http-apis"
 version = "0.1.0"
 description = ""
-authors = ["Nathan Segers <nathan@nathansegers.be>"]
+authors = ["lovepreet singh <lovepreet.singh@student.howest.be>"]
 readme = "README.md"
 packages = [{include = "app"}]
 

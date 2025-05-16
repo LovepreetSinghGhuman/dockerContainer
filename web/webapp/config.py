@@ -10,6 +10,8 @@ class Config(object):
         os.environ[k] = v
         # print(f'export {k}={v}')
 
+    ## Some of these secrets should be set by the user when the application is being launched.
+    # If you run this in a Docker Container, this shouldn't be too hard for you...
     SECRET_KEY = os.getenv('FLASK_SECRET_KEY')
     STATIC_FOLDER = os.getenv('STATIC_FOLDER', '/static')
     DEBUG = os.getenv('DEBUG', False)
